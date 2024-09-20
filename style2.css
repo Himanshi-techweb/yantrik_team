@@ -1,0 +1,287 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.5s;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: white;
+  overflow-y: auto; /* Allows vertical scrolling */
+  position: relative;
+  height: auto;
+  background-image: url("back.jpg");
+}
+.flicker-text {
+  font-size: 5rem;
+  color: rgb(149, 59, 59);
+  text-align: center;
+  animation: flicker 1.5s infinite;
+  padding-top: 4px;
+}
+@keyframes flicker {
+  0% {
+    text-shadow: none;
+  }
+  10% {
+    text-shadow: 0 0 5px #fff;
+  }
+  20% {
+    text-shadow: 0 0 10px #fff;
+  }
+  30% {
+    text-shadow: none;
+  }
+  40% {
+    text-shadow: 0 0 5px #fff;
+  }
+  50% {
+    text-shadow: 0 0 10px #fff;
+  }
+  60% {
+    text-shadow: none;
+  }
+  70% {
+    text-shadow: 0 0 5px #fff;
+  }
+  80% {
+    text-shadow: 0 0 10px #fff;
+  }
+  90% {
+    text-shadow: none;
+  }
+  100% {
+    text-shadow: 0 0 10px #fff;
+  }
+}
+
+/* Header */
+header h1 {
+  text-align: center;
+  color: rgb(115, 15, 15);
+  padding-top: 20px;
+  font-size: 3.5rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: #ffd700;
+  text-align: center;
+  margin: 10px 0 20px 0;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.team-section {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+
+.card {
+  width: 240px;
+  height: 240px;
+  background-color: transparent;
+  border-radius: 20%;
+  margin-top: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: 0px 4px 20px 2px rgba(149, 146, 146, 0.48);
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  transition: transform 0.4s ease-in-out;
+  border-radius: 4px;
+}
+
+.person {
+  width: 60%;
+  height: 60%;
+  position: absolute;
+  top: 40px;
+  left: 48px;
+  border-radius: 40%;
+  border: 2px solid aquamarine;
+}
+
+.card:hover .bg {
+  transform: rotate(120deg);
+}
+
+.info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .info {
+  opacity: 1;
+}
+
+h3,
+h4 {
+  margin: 4px;
+}
+
+.icon {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 60%;
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.card:hover .icon {
+  opacity: 1;
+}
+
+.icon ion-icon {
+  font-size: 2rem;
+  margin: 4px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  .card {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    border-radius: 2px;
+  }
+
+  .person {
+    width: 60%;
+    top: 25px;
+    left: 40px;
+    border-radius: 40%;
+  }
+
+  header h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    width: 160px;
+    height: 160px;
+    margin: 15px;
+  }
+
+  .person {
+    width: 60%;
+    top: 20px;
+    left: 32px;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .card {
+    width: 130px;
+    height: 120px;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .person {
+    width: 64%;
+    top: 8px;
+    left: 24px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+  h3 {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+  .flicker-text {
+    font-size: 3.2rem;
+  }
+}
+@media screen and (max-width: 190px) {
+  .card {
+    width: 120px;
+    height: 98px;
+    border-radius: 2px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    padding: 10px 4px;
+  }
+
+  .person {
+    width: 60%;
+    top: 6px;
+    left: 22px;
+    /* left: 22px; */
+  }
+  h3 {
+    font-size: 0.6rem;
+    text-align: center;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+  .flicker-text {
+    font-size: 2.8rem;
+  }
+}
